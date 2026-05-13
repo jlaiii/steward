@@ -1,0 +1,107 @@
+{
+  "timestamp": "2026-05-13T06:48:45.964561",
+  "hostname": "pc",
+  "os": "Linux 7.0.0-15-generic",
+  "dry_run": true,
+  "overall_status": "ISSUES DETECTED",
+  "steps": [
+    {
+      "phase": "CHECK",
+      "name": "Detect Hermes Agent",
+      "status": "PASS",
+      "details": "  /home/jlaiii/.hermes \u2014 EXISTS\n  /home/jlaiii/.hermes/hermes-agent \u2014 EXISTS",
+      "duration_ms": 0
+    },
+    {
+      "phase": "CHECK",
+      "name": "Detect Ola",
+      "status": "FAIL",
+      "details": "  /home/jlaiii/.ola \u2014 ABSENT\n  /home/jlaiii/.local/share/ola \u2014 ABSENT",
+      "duration_ms": 0
+    },
+    {
+      "phase": "CHECK",
+      "name": "Find binary: git",
+      "status": "PASS",
+      "details": "/usr/bin/git",
+      "duration_ms": 0
+    },
+    {
+      "phase": "CHECK",
+      "name": "Find binary: python3",
+      "status": "PASS",
+      "details": "/home/jlaiii/.hermes/hermes-agent/venv/bin/python3",
+      "duration_ms": 0
+    },
+    {
+      "phase": "VERIFY",
+      "name": "Reachable: https://github.com/NousResearch/hermes-a...",
+      "status": "PASS",
+      "details": "Exit code: 0",
+      "duration_ms": 0
+    },
+    {
+      "phase": "VERIFY",
+      "name": "Health check: Hermes Agent",
+      "status": "PASS",
+      "details": "Status: 200 | Latest tag: v2026.5.7",
+      "duration_ms": 0
+    },
+    {
+      "phase": "VERIFY",
+      "name": "Writable: /home/jlaiii/.hermes",
+      "status": "PASS",
+      "details": "Directory writable",
+      "duration_ms": 0
+    },
+    {
+      "phase": "PLAN",
+      "name": "Build maintenance plan",
+      "status": "PASS",
+      "details": "1. Pull updates for Hermes Agent \u2192 git fetch origin && git rebase origin/main\n2. Update dependencies for Hermes Agent \u2192 pip install -r requirements.txt --upgrade\n3. Migrate config files for Hermes Agent\n4. Run health check for Hermes Agent\n5. Generate post-update report\n7. Schedule system reboot",
+      "duration_ms": 0
+    },
+    {
+      "phase": "SIMULATE",
+      "name": "git pull Hermes Agent",
+      "status": "PASS",
+      "details": "[DRY-RUN] Would run: git fetch origin && git rebase origin/main",
+      "duration_ms": 0
+    },
+    {
+      "phase": "SIMULATE",
+      "name": "pip upgrade Hermes Agent",
+      "status": "PASS",
+      "details": "[DRY-RUN] Would run: pip install -r requirements.txt --upgrade",
+      "duration_ms": 0
+    },
+    {
+      "phase": "SIMULATE",
+      "name": "Config migrate Hermes Agent",
+      "status": "PASS",
+      "details": "[DRY-RUN] Would diff configs and apply schema updates",
+      "duration_ms": 0
+    },
+    {
+      "phase": "SIMULATE",
+      "name": "Health check Hermes Agent",
+      "status": "PASS",
+      "details": "[DRY-RUN] Would verify binary executes and responds to --version",
+      "duration_ms": 0
+    },
+    {
+      "phase": "SIMULATE",
+      "name": "Update Ola",
+      "status": "SKIP",
+      "details": "Agent not installed \u2014 skipping",
+      "duration_ms": 0
+    }
+  ],
+  "summary": {
+    "total_steps": 13,
+    "passed": 11,
+    "failed": 1,
+    "skipped": 1,
+    "dry_run": true
+  }
+}
